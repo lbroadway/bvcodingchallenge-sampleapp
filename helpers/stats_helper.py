@@ -13,5 +13,5 @@ class StatsHelper():
 
     # HINT: You can define more queries here, along with some python logic to calculate!
     def calculate_another_stat(self):
-      # all_rows = self.database.fetch_all("")
-      return None
+      all_rows = self.database.fetch_all("")
+      return all_rows
