@@ -80,7 +80,7 @@
                               <h4 class="card-title display-6">{{ top5[0] }}</h4>
                               <h5 class="mb-5">
                                   {% for beer in top5 %}
-                                  <li>{{ beer.name }}</li>
+                                  <li>{{ beer }}</li>
                                   {% endfor %}
                               </h5>
                               <p class="card-text text-muted mt-auto">Top Five Highest Rated Beers by Taste.</p>
@@ -91,13 +91,27 @@
                       <div class="card shadow rounded">
                           <div class="card-body d-flex flex-column">
                               <h6 class="card-subtitle mb-2 h6 text-radical-red text-uppercase">Five Lowest Rated</h6>
-                              <h4 class="card-title display-6">{{ low5 }}</h4>
+                              <h4 class="card-title display-6">{{ low5[0] }}</h4>
                               <h5 class="mb-5">
                                   {% for beer in low5 %}
-                                  <li>{{ beer.name }}</li>
+                                  <li>{{ beer }}</li>
                                   {% endfor %}
                               </h5>
-                              <p class="card-text text-muted mt-auto">Top Five Highest Rated Beers by Taste.</p>
+                              <p class="card-text text-muted mt-auto">Lowest Rated Beers.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col d-flex align-items-stretch mb-3">
+                      <div class="card shadow rounded">
+                          <div class="card-body d-flex flex-column">
+                              <h6 class="card-subtitle mb-2 h6 text-radical-red text-uppercase">Top 3 Average Breweries</h6>
+                              <h4 class="card-title display-6">{{ top3Avg[0] }}</h4>
+                              <h5 class="mb-5">
+                                  {% for i in top3Avg %}
+                                    {{i}}
+                                  {% endfor %}
+                              </h5>
+                              <p class="card-text text-muted mt-auto">Top 3 Average Breweries.</p>
                           </div>
                       </div>
                   </div>
@@ -122,13 +136,14 @@
                           </tr>
                           </thead>
                           <tbody>
-                          <!-- HINT: Jinja loops may also work well here! -->
+                          {% for i in allRes %}
                           <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                              <th scope="row">{{i[0]}}</th>
+                              <td>{{i[1]}}</td>
+                              <td>{{i[2]}}</td>
+                              <td>{{i[3]}}</td>
                           </tr>
+                          {% endfor %}
                           </tbody>
                         </table>
                       </div>
