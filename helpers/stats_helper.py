@@ -7,7 +7,7 @@ class StatsHelper():
         self.database = Database()
         print("Stats Helping initialising!")
 
-    def caculate_ave_overall_rating(self):
+    def calculate_ave_overall_rating(self):
         result = self.database.fetch_one("SELECT AVG(review_overall) FROM reviews")
         return result[0]
 
