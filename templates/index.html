@@ -77,8 +77,12 @@
                       <div class="card shadow rounded">
                           <div class="card-body d-flex flex-column">
                               <h6 class="card-subtitle mb-2 h6 text-radical-red text-uppercase">Top Five Beers</h6>
-                              <h4 class="card-title display-6">{{ top5 }}</h4>
-                              <h5 class="mb-5" style='text-align:right;'>/ 5</h5>
+                              <h4 class="card-title display-6">{{ top5[0] }}</h4>
+                              <h5 class="mb-5">
+                                  {% for beer in top5 %}
+                                  <li>{{ beer.name }}</li>
+                                  {% endfor %}
+                              </h5>
                               <p class="card-text text-muted mt-auto">Top Five Highest Rated Beers by Taste.</p>
                           </div>
                       </div>
@@ -88,7 +92,11 @@
                           <div class="card-body d-flex flex-column">
                               <h6 class="card-subtitle mb-2 h6 text-radical-red text-uppercase">Five Lowest Rated</h6>
                               <h4 class="card-title display-6">{{ low5 }}</h4>
-                              <h5 class="mb-5">{{ sub_low5 }}</h5>
+                              <h5 class="mb-5">
+                                  {% for beer in low5 %}
+                                  <li>{{ beer.name }}</li>
+                                  {% endfor %}
+                              </h5>
                               <p class="card-text text-muted mt-auto">Top Five Highest Rated Beers by Taste.</p>
                           </div>
                       </div>
